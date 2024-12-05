@@ -39,7 +39,15 @@ namespace SEDP
                             Console.WriteLine("Forgotten Password?");
                             Console.WriteLine("1. Yes");
                             Console.WriteLine("2. No");
-                            string? retryPasswordChoice = Console.ReadLine();
+
+                            string? retryPasswordChoice;
+                            while (true)
+                            {
+                                retryPasswordChoice = Console.ReadLine();
+                                if (retryPasswordChoice == "1" || retryPasswordChoice == "2")
+                                    break;
+                                Console.WriteLine("Invalid choice, enter 1 or 2:");
+                            }
 
                             if (retryPasswordChoice == "1")
                             {
@@ -65,7 +73,15 @@ namespace SEDP
                                 Console.WriteLine("Would you like to try entering the password again?");
                                 Console.WriteLine("1. Yes");
                                 Console.WriteLine("2. No");
-                                string? retryPasswordChoiceAfterForgot = Console.ReadLine();
+
+                                string? retryPasswordChoiceAfterForgot;
+                                while (true)
+                                {
+                                    retryPasswordChoiceAfterForgot = Console.ReadLine();
+                                    if (retryPasswordChoiceAfterForgot == "1" || retryPasswordChoiceAfterForgot == "2")
+                                        break;
+                                    Console.WriteLine("Invalid choice. Please enter 1 or 2:");
+                                }
 
                                 if (retryPasswordChoiceAfterForgot == "2")
                                 {
@@ -82,7 +98,15 @@ namespace SEDP
                     Console.WriteLine("Would you like to see the correct Login ID?");
                     Console.WriteLine("1. Yes");
                     Console.WriteLine("2. No");
-                    string? viewLoginIDChoice = Console.ReadLine();
+
+                    string? viewLoginIDChoice;
+                    while (true)
+                    {
+                        viewLoginIDChoice = Console.ReadLine();
+                        if (viewLoginIDChoice == "1" || viewLoginIDChoice == "2")
+                            break;
+                        Console.WriteLine("Invalid choice. Please enter 1 or 2:");
+                    }
 
                     if (viewLoginIDChoice == "1")
                     {
@@ -92,7 +116,15 @@ namespace SEDP
                     Console.WriteLine("Would you like to continue by entering the Login ID?");
                     Console.WriteLine("1. Yes");
                     Console.WriteLine("2. No");
-                    string? retryLoginChoice = Console.ReadLine();
+
+                    string? retryLoginChoice;
+                    while (true)
+                    {
+                        retryLoginChoice = Console.ReadLine();
+                        if (retryLoginChoice == "1" || retryLoginChoice == "2")
+                            break;
+                        Console.WriteLine("Invalid choice. Please enter 1 or 2:");
+                    }
 
                     if (retryLoginChoice == "2")
                     {
