@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Tour_Manager xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Tours>
+    <Tour>
+      <Name>BD Tour</Name>
+      <Identifier>6663</Identifier>
+      <Cities />
+      <Members>
+        <Member>
+          <Name>Mohiuddin</Name>
+          <BookingNumber>20WA</BookingNumber>
+          <VisitedMuseums />
+        </Member>
+      </Members>
+    </Tour>
+    <Tour>
+      <Name>Asia Tour</Name>
+      <Identifier>GB55</Identifier>
+      <Cities />
+      <Members>
+        <Member>
+          <Name>Shakil</Name>
+          <BookingNumber>12DG</BookingNumber>
+          <VisitedMuseums />
+        </Member>
+      </Members>
+    </Tour>
+    <Tour>
+      <Name>Africa Tour</Name>
+      <Identifier>B002</Identifier>
+      <Cities />
+      <Members />
+    </Tour>
+    <Tour>
+      <Name>Europe Tour</Name>
+      <Identifier>0IQA</Identifier>
+      <Cities>
+        <City>
+          <Name>Istanbul</Name>
+          <Museums />
+        </City>
+      </Cities>
+      <Members />
+    </Tour>
+    <Tour>
+      <Name>Arab Tour</Name>
+      <Identifier>Q42W</Identifier>
+      <Cities />
+      <Members />
+    </Tour>
+    <Tour>
+      <Name>Dhaka Tour</Name>
+      <Identifier>H4E7</Identifier>
+      <Cities />
+      <Members />
+    </Tour>
+    <Tour>
+      <Name>Paris Tour</Name>
+      <Identifier>HA15</Identifier>
+      <Cities />
+      <Members />
+    </Tour>
+    <Tour>
+      <Name>Pakistan Tour</Name>
+      <Identifier>2A3C</Identifier>
+      <Cities />
+      <Members />
+    </Tour>
+  </Tours>
+</Tour_Manager>
