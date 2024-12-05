@@ -60,7 +60,7 @@ namespace SEDP
                                     Console.WriteLine("Security answer verified. Enter a new password:");
                                     string? newPassword = Console.ReadLine();
                                     correctPassword = newPassword!;
-                                    Console.WriteLine("Your password has been changed successfully. Please try logging in again.");
+                                    Console.WriteLine("Your password has been changed successfully, try logging in again.");
                                     break;
                                 }
                                 else
@@ -105,7 +105,7 @@ namespace SEDP
                         viewLoginIDChoice = Console.ReadLine();
                         if (viewLoginIDChoice == "1" || viewLoginIDChoice == "2")
                             break;
-                        Console.WriteLine("Invalid choice. Please enter 1 or 2:");
+                        Console.WriteLine("Invalid choice, enter 1 or 2:");
                     }
 
                     if (viewLoginIDChoice == "1")
@@ -123,7 +123,7 @@ namespace SEDP
                         retryLoginChoice = Console.ReadLine();
                         if (retryLoginChoice == "1" || retryLoginChoice == "2")
                             break;
-                        Console.WriteLine("Invalid choice. Please enter 1 or 2:");
+                        Console.WriteLine("Invalid choice, enter 1 or 2:");
                     }
 
                     if (retryLoginChoice == "2")
