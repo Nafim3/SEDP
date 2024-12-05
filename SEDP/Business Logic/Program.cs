@@ -80,7 +80,7 @@ namespace SEDP
                                     retryPasswordChoiceAfterForgot = Console.ReadLine();
                                     if (retryPasswordChoiceAfterForgot == "1" || retryPasswordChoiceAfterForgot == "2")
                                         break;
-                                    Console.WriteLine("Invalid choice. Please enter 1 or 2:");
+                                    Console.WriteLine("Invalid choice, enter 1 or 2:");
                                 }
 
                                 if (retryPasswordChoiceAfterForgot == "2")
