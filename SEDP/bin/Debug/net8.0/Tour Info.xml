@@ -55,12 +55,6 @@
       <Members />
     </Tour>
     <Tour>
-      <Name>Paris Tour</Name>
-      <Identifier>HA15</Identifier>
-      <Cities />
-      <Members />
-    </Tour>
-    <Tour>
       <Name>Pakistan Tour</Name>
       <Identifier>2A3C</Identifier>
       <Cities />
