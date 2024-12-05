@@ -1,15 +1,16 @@
 ﻿using SEDP.Business_Logic;
+using SEDP.UI;
 using System.Diagnostics;
 using System.Xml.Linq;
 
 namespace SEDP
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Operation_Handler Handler = new Operation_Handler();
-            Handler.Run();
+            var operationHandler = new Operation_Handler(new Tour_Manager());
+            operationHandler.Start();
         }
     }
 }

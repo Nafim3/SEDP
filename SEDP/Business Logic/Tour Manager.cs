@@ -1,26 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace SEDP.Business_Logic
 {
+    [XmlRoot("Tour_Manager")]
     public class Tour_Manager
     {
-        private List<Tour> Tours { get; set; } = new List<Tour>();
+        [XmlArray("Tours")]
+        [XmlArrayItem("Tour")]
+        public List<Tour> Tours { get; set; } = new List<Tour>();  // Added XmlArray and XmlArrayItem attributes
 
+        // Assuming you have this method in the Tour_Manager class to add the tour
         public void AddTour(Tour tour)
         {
-            if (!Tours.Any(t => t.Identifier == tour.Identifier))
-            {
-                Tours.Add(tour);
-                Console.WriteLine($"Tour '{tour.Name}' added successfully.");
-            }
-            else
-            {
-                Console.WriteLine($"A tour with the identifier '{tour.Identifier}' already exists.");
-            }
+            // Add the tour to the collection
+            Tours.Add(tour); // Assuming `Tours` is a List<Tour>
+            Console.WriteLine($"Tour '{tour.Name}' added successfully.");
         }
 
         public void RemoveTour(string identifier)
@@ -30,7 +28,7 @@ namespace SEDP.Business_Logic
             if (tourToRemove != null)
             {
                 Tours.Remove(tourToRemove);
-                Console.WriteLine($"Tour with identifier '{identifier}' removed successfully.");
+                
             }
             else
             {
@@ -50,17 +48,17 @@ namespace SEDP.Business_Logic
 
         public void ListAllTours()
         {
-            if (Tours.Count == 0)
+            if (Tours == null || !Tours.Any())
             {
                 Console.WriteLine("No tours available.");
+                return;
             }
-            else
+
+            foreach (var tour in Tours)
             {
-                foreach (var tour in Tours)
-                {
-                    Console.WriteLine($"Identifier: {tour.Identifier}, Name: {tour.Name}");
-                }
+                Console.WriteLine($"\nTour Identifier: {tour.Identifier}, Name: {tour.Name}\n");
             }
         }
+
     }
 }
