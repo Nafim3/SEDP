@@ -9,8 +9,8 @@ namespace SEDP
     {
         static void Main(string[] args)
         {
-            string correctUsername = "SysCtrl";
-            string correctPassword = "access";
+            string Login_ID = "SysCtrl";
+            string Password = "access";
             bool isAuthenticated = false;
 
             while (!isAuthenticated)
@@ -18,14 +18,14 @@ namespace SEDP
                 Console.WriteLine("Enter Login ID:");
                 string? usernameInput = Console.ReadLine();
 
-                if (usernameInput == correctUsername)
+                if (usernameInput == Login_ID)
                 {
                     while (true)
                     {
                         Console.WriteLine("Enter Password:");
                         string? passwordInput = Console.ReadLine();
 
-                        if (passwordInput == correctPassword)
+                        if (passwordInput == Password)
                         {
                             isAuthenticated = true;
                             Console.WriteLine("Login successful");
@@ -52,14 +52,14 @@ namespace SEDP
                             if (retryPasswordChoice == "1")
                             {
                                 Console.WriteLine("To reset your password, answer the following question.");
-                                Console.WriteLine("Which city is the University of Hull located?\nAnswer should be in all uppercase letters");
+                                Console.WriteLine("In which city is the University of Hull located?\nAnswer should be in all uppercase letters");
                                 string? securityAnswer = Console.ReadLine();
 
                                 if (securityAnswer == "HULL")
                                 {
                                     Console.WriteLine("Security answer verified. Enter a new password:");
                                     string? newPassword = Console.ReadLine();
-                                    correctPassword = newPassword!;
+                                    Password = newPassword!;
                                     Console.WriteLine("Your password has been changed successfully, try logging in again.");
                                     break;
                                 }
@@ -110,7 +110,7 @@ namespace SEDP
 
                     if (viewLoginIDChoice == "1")
                     {
-                        Console.WriteLine($"The correct Login ID is: {correctUsername}");
+                        Console.WriteLine($"The correct Login ID is: {Login_ID}");
                     }
 
                     Console.WriteLine("Would you like to continue by entering the Login ID?");

@@ -45,7 +45,7 @@ namespace SEDP.UI
                 Console.WriteLine("Select an option");
                 string? Choose_option = Console.ReadLine();
 
-                // Create a single instance of Operation_Handler with tour_Manager
+                
                 var operationHandler = new Operation_Handler(loadedTourManager);
 
                 switch (Choose_option)

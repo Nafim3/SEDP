@@ -32,17 +32,6 @@
       <Members />
     </Tour>
     <Tour>
-      <Name>Europe Tour</Name>
-      <Identifier>0IQA</Identifier>
-      <Cities>
-        <City>
-          <Name>Istanbul</Name>
-          <Museums />
-        </City>
-      </Cities>
-      <Members />
-    </Tour>
-    <Tour>
       <Name>Arab Tour</Name>
       <Identifier>Q42W</Identifier>
       <Cities />
