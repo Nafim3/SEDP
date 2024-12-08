@@ -13,7 +13,7 @@ namespace Software_Test
         [TestMethod]
         public void Test()
         {
-            void Test_AddTour_Should_Add_Tour_To_TourManager()
+            void Test_AddTour()
             {
                 // Arrange
                 var mockTourManager = new Mock<Tour_Manager>();
@@ -34,7 +34,7 @@ namespace Software_Test
         }
 
         [TestMethod]
-        public void TestRemoveTour_ValidIdentifier_TourRemoved()
+        public void TestRemoveTour_with_ValidIdentifier_TourRemoved()
         {
             // Arrange: Create a Tour_Manager and add a tour
             var tourManager = new Tour_Manager();
@@ -445,10 +445,13 @@ namespace Software_Test
 
             // Assert: Check if the correct success message is printed
             var output = stringWriter.ToString().Trim();
-            Assert.IsTrue(output.Contains("Members of Tour: Tour 1"), "The tour name should be displayed.");
-            Assert.IsTrue(output.Contains("Sakib, 12345"), "The first member's name and booking number should be displayed.");
-            Assert.IsTrue(output.Contains("Farid, 67890"), "The second member's name and booking number should be displayed.");
+
+            // Verify the format and content of the output
+            Assert.IsTrue(output.Contains("\nTour name: Tour 1"), "The tour name should be displayed.");
+            Assert.IsTrue(output.Contains("Name: Sakib, Booking number: 12345"), "The first member's name and booking number should be displayed.");
+            Assert.IsTrue(output.Contains("Name: Farid, Booking number: 67890"), "The second member's name and booking number should be displayed.");
         }
+
 
 
         [TestMethod]

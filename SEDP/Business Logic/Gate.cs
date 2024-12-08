@@ -9,10 +9,10 @@ namespace SEDP.Business_Logic
     public class Gate
     {
 
-        private string Login_ID = "SysCtrl";
+        private readonly string Login_ID = "SysCtrl";
         private string Password = "access";
 
-        public void Credentials() 
+        public void Security() 
         {
             
             bool isAuthenticated = false;

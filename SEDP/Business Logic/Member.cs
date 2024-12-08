@@ -19,39 +19,5 @@ namespace SEDP.Business_Logic
 
         // Constructor
         public Member() { }
-
-        public Member(string name, string bookingNumber)
-        {
-            Name = name;
-            BookingNumber = bookingNumber;
-        }
-
-        // Method to add a visited museum
-        public void AddVisitedMuseum(Museum museum)
-        {
-            VisitedMuseums.Add(museum);
-        }
-
-       
-
-        // Method to save the Member object to XML file
-        public void SaveToXml(string filePath)
-        {
-            var serializer = new XmlSerializer(typeof(Member));
-            using (var writer = new System.IO.StreamWriter(filePath))
-            {
-                serializer.Serialize(writer, this);
-            }
-        }
-
-        // Static method to load Member object from XML file
-        public static Member LoadFromXml(string filePath)
-        {
-            var serializer = new XmlSerializer(typeof(Member));
-            using (var reader = new System.IO.StreamReader(filePath))
-            {
-                return (Member)serializer.Deserialize(reader)!;
-            }
-        }
     }
 }

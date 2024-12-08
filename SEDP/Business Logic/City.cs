@@ -30,30 +30,6 @@ namespace SEDP.Business_Logic
             Museums.Remove(museum);
         }
 
-        // Get a list of museum names
-        public List<string> GetMuseumNames()
-        {
-            return Museums.Select(m => m.Name).ToList();
-        }
-
-        // Save the City object to XML
-        public void SaveToXml(string filePath)
-        {
-            var serializer = new XmlSerializer(typeof(City));
-            using (var writer = new System.IO.StreamWriter(filePath))
-            {
-                serializer.Serialize(writer, this);
-            }
-        }
-
-        // Load the City object from an XML file
-        public static City LoadFromXml(string filePath)
-        {
-            var serializer = new XmlSerializer(typeof(City));
-            using (var reader = new System.IO.StreamReader(filePath))
-            {
-                return (City)serializer.Deserialize(reader)!;
-            }
-        }
+      
     }
 }

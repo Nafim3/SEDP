@@ -9,13 +9,10 @@ namespace SEDP.UI
 {
     public class Options
     {
-        private readonly Operation_Handler operationHandler;
-        private Tour_Manager loadedTourManager;
+       
+        private readonly Tour_Manager loadedTourManager;
 
-        public Options(Operation_Handler handler)
-        {
-            operationHandler = handler;
-        }
+      
 
         public Options(Tour_Manager loadedTourManager)
         {
@@ -126,9 +123,5 @@ namespace SEDP.UI
                 }
             }
         }
-
-
     }
-
-
 }

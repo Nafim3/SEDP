@@ -4,7 +4,12 @@
     <Tour>
       <Name>BD Tour</Name>
       <Identifier>6663</Identifier>
-      <Cities />
+      <Cities>
+        <City>
+          <Name>Dhaka</Name>
+          <Museums />
+        </City>
+      </Cities>
       <Members>
         <Member>
           <Name>Mohiuddin</Name>
@@ -16,7 +21,12 @@
     <Tour>
       <Name>Asia Tour</Name>
       <Identifier>GB55</Identifier>
-      <Cities />
+      <Cities>
+        <City>
+          <Name>Dhaka</Name>
+          <Museums />
+        </City>
+      </Cities>
       <Members>
         <Member>
           <Name>Shakil</Name>

@@ -39,7 +39,6 @@ namespace SEDP.Business_Logic
             }
         }
 
-
         public void AddMember(Member member)
         {
             Members.Add(member);
@@ -68,32 +67,5 @@ namespace SEDP.Business_Logic
             }
             return totalExtraCosts;
         }
-
-        // Method to get the list of city names
-        public List<string> GetCityNames()
-        {
-            List<string> cityNames = new List<string>();
-
-            foreach (var city in Cities)
-            {
-                cityNames.Add(city.Name);
-            }
-
-            return cityNames;
-        }
-
-        // Method to check if a city exists in the tour's cities list
-        public bool ContainsCity(string cityName)
-        {
-            foreach (var city in Cities)
-            {
-                if (city.Name == cityName)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-       
     }
 }
