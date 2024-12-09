@@ -53,7 +53,7 @@ namespace SEDP.Business_Logic
 
         public decimal CalculateExtraCosts()
         {
-            decimal totalExtraCosts = 1500;
+            decimal totalExtraCosts = 2000;
 
             foreach (var member in Members)
             {

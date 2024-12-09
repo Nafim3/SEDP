@@ -9,6 +9,16 @@
           <Name>Dhaka</Name>
           <Museums />
         </City>
+        <City>
+          <Name>Tangail</Name>
+          <Museums>
+            <Museum>
+              <Name>BD Museum</Name>
+              <Cost>2000</Cost>
+              <Visitors />
+            </Museum>
+          </Museums>
+        </City>
       </Cities>
       <Members>
         <Member>
@@ -57,6 +67,23 @@
       <Name>Pakistan Tour</Name>
       <Identifier>2A3C</Identifier>
       <Cities />
+      <Members />
+    </Tour>
+    <Tour>
+      <Name>City Tour</Name>
+      <Identifier>1H57</Identifier>
+      <Cities>
+        <City>
+          <Name>Hull</Name>
+          <Museums>
+            <Museum>
+              <Name>Yorkshire Museum</Name>
+              <Cost>2000</Cost>
+              <Visitors />
+            </Museum>
+          </Museums>
+        </City>
+      </Cities>
       <Members />
     </Tour>
   </Tours>

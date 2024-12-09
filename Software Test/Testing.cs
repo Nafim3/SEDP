@@ -11,26 +11,26 @@ namespace Software_Test
     public class Testing
     {
         [TestMethod]
-        public void Test()
+        public void Test_AddTour_AddsTourCorrectly()
         {
-            void Test_AddTour()
-            {
-                // Arrange
-                var mockTourManager = new Mock<Tour_Manager>();
-                var operationHandler = new Operation_Handler(mockTourManager.Object);
+            // Arrange: Create an instance of Tour_Manager and a new Tour
+            var tourManager = new Tour_Manager();
+            var tour = new Tour { Name = "Test Tour", Identifier = "1234" };
 
-                // Mock user input
-                var name = "Test Tour";
-                Console.SetIn(new System.IO.StringReader(name));
+            // Redirect the console output to capture the output
+            var stringWriter = new StringWriter();
+            Console.SetOut(stringWriter);
 
-                // Act
-                var result = operationHandler.AddTour(mockTourManager.Object);
+            // Act: Call AddTour
+            tourManager.AddTour(tour);
 
-                // Assert
-                Assert.IsNotNull(result);
-                Assert.AreEqual(name, result.Name);
-                mockTourManager.Verify(m => m.AddTour(It.Is<Tour>(t => t.Name == name)), Times.Once);
-            }
+            // Assert: Check if the tour was added to the collection
+            Assert.AreEqual(1, tourManager.Tours.Count, "The tour should be added to the Tours collection.");
+            Assert.AreEqual(tour, tourManager.Tours[0], "The added tour should match the one provided.");
+
+            // Assert: Check if the correct message is printed to the console
+            var output = stringWriter.ToString().Trim();
+            Assert.IsTrue(output.Contains($"Tour '{tour.Name}' added successfully."), "The success message should be printed to the console.");
         }
 
         [TestMethod]

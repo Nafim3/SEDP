@@ -18,13 +18,13 @@ namespace SEDP.Business_Logic
         // Constructor
         public City() { }
 
-        // Add a museum to the city
+ 
         public void AddMuseum(Museum museum)
         {
             Museums.Add(museum);
         }
 
-        // Remove a museum by its object reference
+
         public void RemoveMuseum(Museum museum)
         {
             Museums.Remove(museum);

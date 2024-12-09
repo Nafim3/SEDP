@@ -37,7 +37,7 @@ namespace SEDP.Business_Logic
             // Check for null and provide a default value if necessary
             name ??= "Default Tour Name";  // If name is null, use this default value 
 
-            string identifier = new string(Enumerable.Range(0, 4).Select(_ => "A3C9W4E71H5Q2P0Q719"[new Random().Next(18)]).ToArray());
+            string identifier = new string(Enumerable.Range(0, 4).Select(_=>"A3C9W4E71H5Q2P0Q719"[new Random().Next(18)]).ToArray());
 
             Tour newTour = new Tour
             {
@@ -144,7 +144,8 @@ namespace SEDP.Business_Logic
                     else
                     {
                         Museum museum = new Museum { Name = museumName };
-                        city.AddMuseum(museum);  // Ensure AddMuseum handles adding the museum properly
+                        city.AddMuseum(museum);
+                        SaveDataToXml(tour_Manager);
                         Console.WriteLine($"Museum '{museumName}' added to City '{city.Name}' in Tour '{tour.Name}'.");
                     }
                 }
@@ -412,7 +413,7 @@ namespace SEDP.Business_Logic
                 var serializer = new XmlSerializer(typeof(Tour_Manager));
                 using (var reader = new StreamReader(filePath))
                 {
-                    return (Tour_Manager)serializer.Deserialize(reader);
+                    return (Tour_Manager)serializer.Deserialize(reader)!;
                 }
             }
             else

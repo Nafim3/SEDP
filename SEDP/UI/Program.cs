@@ -1,9 +1,10 @@
-﻿using SEDP.Business_Logic;
-using SEDP.UI;
-using System.Diagnostics;
-using System.Xml.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace SEDP
+namespace SEDP.UI
 {
     internal class Program
     {

@@ -10,7 +10,7 @@ namespace SEDP.Business_Logic
         [XmlElement("Name")]  // Marks the Name property for XML serialization
         public string Name { get; set; }
 
-        [XmlElement("Cost")]  // Marks the Cost property for XML serialization
+      //  [XmlElement("Cost")]  // Marks the Cost property for XML serialization
         public decimal Cost { get; set; } = 2000;
 
         [XmlArray("Visitors")]  // Marks the collection of visitors to be serialized

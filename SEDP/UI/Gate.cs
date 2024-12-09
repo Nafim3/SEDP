@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SEDP.Business_Logic;
 
-namespace SEDP.Business_Logic
+namespace SEDP.UI
 {
     public class Gate
     {
@@ -12,9 +13,9 @@ namespace SEDP.Business_Logic
         private readonly string Login_ID = "SysCtrl";
         private string Password = "access";
 
-        public void Security() 
+        public void Security()
         {
-            
+
             bool isAuthenticated = false;
 
             while (!isAuthenticated)
@@ -139,4 +140,5 @@ namespace SEDP.Business_Logic
             }
         }
     }
+
 }
