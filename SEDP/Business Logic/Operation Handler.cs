@@ -394,14 +394,22 @@ namespace SEDP.Business_Logic
         {
             foreach (var tour in tour_Manager.GetAllTours())
             {
-                
-                foreach (var member in tour.Members)
+                Console.WriteLine($"\nTour name: {tour.Name}");
+
+                if (tour.Members == null || !tour.Members.Any())
                 {
-                    Console.WriteLine($"\nTour name: {tour.Name}");
-                    Console.WriteLine($"Name: {member.Name}, Booking number: {member.BookingNumber}\n");
+                    Console.WriteLine("No members are booked for this tour.\n");
+                }
+                else
+                {
+                    foreach (var member in tour.Members)
+                    {
+                        Console.WriteLine($"Name: {member.Name}, Booking number: {member.BookingNumber}");
+                    }
                 }
             }
         }
+
 
         private const string FilePath = "Tour Info.xml";
 

@@ -426,31 +426,43 @@ namespace Software_Test
         [TestMethod]
         public void TestDisplayMembers_DisplaysMembersCorrectly()
         {
-            // Arrange: Create a Tour_Manager, a Tour, and Members
+            // Arrange: Create a Tour_Manager and set up tours with and without members
             var tourManager = new Tour_Manager();
-            var tour = new Tour { Identifier = "Tour1", Name = "Tour 1" };
-            var member1 = new Member { Name = "Sakib", BookingNumber = "12345" };
-            var member2 = new Member { Name = "Farid", BookingNumber = "67890" };
-            tour.AddMember(member1);
-            tour.AddMember(member2);
-            tourManager.Tours = new List<Tour> { tour };
 
-            // Redirect the console output to capture the output
+            // Tour with members
+            var tourWithMembers = new Tour { Identifier = "Tour1", Name = "Tour 1" };
+            tourWithMembers.AddMember(new Member { Name = "Sakib", BookingNumber = "12345" });
+            tourWithMembers.AddMember(new Member { Name = "Farid", BookingNumber = "67890" });
+
+            // Tour without members
+            var tourWithoutMembers = new Tour { Identifier = "Tour2", Name = "Tour 2" };
+
+            // Add tours to the Tour_Manager
+            tourManager.Tours = new List<Tour> { tourWithMembers, tourWithoutMembers };
+
+            // Redirect the console output to capture it
             var stringWriter = new StringWriter();
             Console.SetOut(stringWriter);
 
-            // Create an instance of Operation_Handler and call DisplayMembers
+            // Act: Call the DisplayMembers method
             var operationHandler = new Operation_Handler(tourManager);
             operationHandler.DisplayMembers(tourManager);
 
-            // Assert: Check if the correct success message is printed
+            // Capture and analyze the output
             var output = stringWriter.ToString().Trim();
 
-            // Verify the format and content of the output
-            Assert.IsTrue(output.Contains("\nTour name: Tour 1"), "The tour name should be displayed.");
-            Assert.IsTrue(output.Contains("Name: Sakib, Booking number: 12345"), "The first member's name and booking number should be displayed.");
-            Assert.IsTrue(output.Contains("Name: Farid, Booking number: 67890"), "The second member's name and booking number should be displayed.");
+            // Assert: Validate the output
+            // Check the tour with members
+            Assert.IsTrue(output.Contains("Tour name: Tour 1"), "The tour name 'Tour 1' should be displayed.");
+            Assert.IsTrue(output.Contains("Name: Sakib, Booking number: 12345"), "The member 'Sakib' should be listed.");
+            Assert.IsTrue(output.Contains("Name: Farid, Booking number: 67890"), "The member 'Farid' should be listed.");
+
+            // Check the tour without members
+            Assert.IsTrue(output.Contains("Tour name: Tour 2"), "The tour name 'Tour 2' should be displayed.");
+            Assert.IsTrue(output.Contains("No members are booked for this tour."), "A message indicating no members should be displayed.");
         }
+
+
 
 
 
